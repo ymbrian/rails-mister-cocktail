@@ -1,0 +1,50 @@
+<!-- <h1>Add new dose for <%= @cocktail.name %></h1>
+
+<%= simple_form_for [@cocktail, @dose] do |f| %>
+  <%= f.input :description %>
+  <%= f.hidden_field :cocktail_id, value: @cocktail.id %>
+  <%= f.input :ingredient_id, collection: Ingredient.all %>
+  <%= f.button :submit, "Submit" %>
+<% end %> -->
+
+
+<%= link_to "Return", cocktail_path(@cocktail) %>
+
+<div class="show-wrapper">
+  <div class="show-card">
+    <div class="container">
+    <!-- cocktail heading -->
+      <div class="row image-row">
+        <div class="col-xs-12 col-md-offset-2 col-md-8">
+       <!--    <div class="cocktail-header"> -->
+            <img src="<%= @cocktail.image_url %>" class="avatar">
+          <!-- </div> -->
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-xs-12 col-md-offset-2 col-md-8">
+       <!--    <div class="cocktail-header"> -->
+            <%= @cocktail.name %>
+          <!-- </div> -->
+        </div>
+      </div>
+    <!-- cocktail doses -->
+      <div class="row new-dose">
+        <div class="col-xs-12">
+          <%= simple_form_for [@cocktail, @dose] do |f| %>
+            <%= f.input :description %>
+            <%= f.hidden_field :cocktail_id, value: @cocktail.id %>
+            <%= f.input :ingredient_id, collection: Ingredient.all %>
+            <%= f.button :submit, "Submit", class: "btn btn-primary dose-submit" %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+    <!-- links -->
+    <div class="link-container">
+      <%= link_to "Return", cocktail_path(@cocktail), class: "btn btn-danger" %>
+    </div>
+  </div>
+</div>
+

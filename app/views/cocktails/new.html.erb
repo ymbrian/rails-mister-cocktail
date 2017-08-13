@@ -1,0 +1,15 @@
+<div class="new-form-container">
+  <div class="form-title text-center">
+    <h3>Create your cocktail</h3>
+  </div>
+  <div class="cocktail-form">
+    <%= form_for @cocktail, class: "test" do |f| %>
+      <%= f.label :name, class: "field-name" %>
+      <%= f.text_field :name, autofocus: true, class: "cocktail-name" %>
+      <%= f.button :submit, class: "btn btn-primary" %>
+    <% end %>
+  </div>
+  <div class="text-center button-div">
+    <%= link_to "Back", cocktails_path, class: "cocktail-button" %>
+  </div>
+</div>

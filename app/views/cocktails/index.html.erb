@@ -1,0 +1,17 @@
+<%= render "layouts/banner" %>
+<div class="container">
+  <div class="row">
+    <% @cocktails.each do |cocktail| %>
+      <div class="col-xs-12 col-sm-4 col-sm-3">
+        <div class="card">
+          <div class="card-title">
+            <%= link_to cocktail.name, cocktail_path(cocktail) %>
+          </div>
+          <div>
+            <img src="<%= cocktail.image_url %>" alt="logo" class="avatar">
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

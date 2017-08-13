@@ -1,0 +1,56 @@
+<div class="show-wrapper">
+  <div class="show-card">
+    <div class="container">
+    <!-- cocktail heading -->
+      <div class="row image-row">
+        <div class="col-xs-12 col-md-offset-2 col-md-8">
+       <!--    <div class="cocktail-header"> -->
+            <img src="<%= @cocktail.image_url %>" class="avatar">
+          <!-- </div> -->
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-xs-12 col-md-offset-2 col-md-8">
+       <!--    <div class="cocktail-header"> -->
+            <%= @cocktail.name %>
+          <!-- </div> -->
+        </div>
+      </div>
+    <!-- cocktail doses -->
+      <div class="row">
+        <div class="col-xs-12 col-md-offset-2 col-md-8">
+          <h3 class="text-center">Doses</h3>
+            <table class="table table-condensed restaurant-reviews-table">
+              <thead>
+                <tr>
+                  <th>Description</th>
+                  <th>Ingredient</th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody>
+                <% @cocktail.doses.map do |dose| %>
+                  <tr>
+                    <td><%= dose.description.downcase %></td>
+                    <td><%= dose.ingredient.name.capitalize %></td>
+                    <td><%= link_to "Delete", dose_path(dose), method: :delete %></td>
+                  </tr>
+              <% end %>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <!-- links -->
+    <div class="link-container">
+      <%= link_to "Add dose", new_cocktail_dose_path(@cocktail), class: "btn btn-primary add-dose-btn" %>
+      <%= link_to "Return", cocktails_path, class: "btn btn-danger" %>
+    </div>
+  </div>
+</div>
+
+
+
+
+

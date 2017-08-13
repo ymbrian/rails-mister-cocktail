@@ -1,0 +1,26 @@
+.wrapper {
+  height: 100vh;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.6);
+  background-image: image_url("banner.jpg");
+  background-size: cover !important;
+  background-position: center;
+  color: $white;
+  position: relative;
+  margin-bottom: 10px;
+}
+
+.banner-description {
+  position: absolute;
+  top: 130px;
+  left: 10px;
+
+}
+
+.banner-description a {
+  text-decoration: none;
+  color: $white;
+}
+
+.banner-description a:hover {
+  opacity: 0.7;
+}
